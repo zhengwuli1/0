@@ -1,25 +1,194 @@
-mixed-port: 7890
-allow-lan: true
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
-secret: ""
-proxies:
+# Config for OpenVPN 2.x
+# Enables connection to GUI
+management /data/user/0/com.soso.vpn/cache/mgmtsocket unix
+management-client
+management-query-passwords
+management-hold
 
-  - name: 新西伯利亚
-    type: vmess
-    server: 193.53.126.52
-    port: 666
-    uuid: 91408b79-e6e2-4f99-bee9-92e47ff83918
-    alterId: 10
-    cipher: auto
-    network: http
-    
-  - name: 韩国
-    type: vmess
-    server: 158.247.237.179
-    port: 666
-    uuid: 389f6fce-acca-41a1-9684-a4f8d007c9d5
-    alterId: 10
-    cipher: auto
-    
+setenv IV_GUI_VER "com.soso.vpn 4.0" 
+setenv IV_SSO openurl,crtext
+machine-readable-output
+allow-recursive-routing
+ifconfig-nowarn
+client
+verb 4
+connect-retry 2 300
+resolv-retry 60
+dev tun
+remote 3.134.92.78 1194 udp
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIDSzCCAjOgAwIBAgIUAQ0DmpxRrMCPCh+wYdaU3CnbSgkwDQYJKoZIhvcNAQEL
+BQAwFjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjAwNzAzMjExODM5WhcNMzAw
+NzAxMjExODM5WjAWMRQwEgYDVQQDDAtFYXN5LVJTQSBDQTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAN9uNfgSlzIGh5FGYxRxLOvoDQ4vd+Xo+0QsgigA
+fpkw1Aq0jjlvk5Jfzs/P8KyTk28mDLhMRScSMBG0cVZth+Xa5A6rOCTpa3lPZ56H
+G9AFBskMyrV5wI27/GB3eeNP0Dpi0ub/Kw0DunDsJyQC7DQPCL2+B2jJDyMw+TtA
+yNaqtGizf2ZqjErCsqYRZR/F5sJqEhza9z86afIT67Z5AlSBvuilu6luGINUqFUa
+zWt++gNCj4hXl5Sz2hk8MT53YaKjW1kgmtxJpNqE4f/PSLil4w/782m62XmA+QFb
+f5AKuuTU/EP6PwNVp909TGGScOo19ToJJ8c0w2RCLtZLF9UCAwEAAaOBkDCBjTAd
+BgNVHQ4EFgQUpFqI5McAwaSD8MJMP1u/jRO57LYwUQYDVR0jBEowSIAUpFqI5McA
+waSD8MJMP1u/jRO57LahGqQYMBYxFDASBgNVBAMMC0Vhc3ktUlNBIENBghQBDQOa
+nFGswI8KH7Bh1pTcKdtKCTAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjANBgkq
+hkiG9w0BAQsFAAOCAQEATwaKHKv6EGy+VGs53IS/bK8U4jmiuuylKNF/ytKO8WvH
+RWtLcrJlwnsaDbMA++kIMDbEntAU/7sBgtGlN8jkKdMobeTwkdb8KYOJ0NEuAYNz
+8t4YA8EiHp8eibPOFphbp09+4S/3uQuXrKumbyYZV0gf6rHzOkKMjGBsnHZ0s3S3
+UR5ONNmSK/BUG3JxZNXpVSArAx8L2ZHVJKXmyLdH33/9+/tJSoI+2yHu4uV5x6H8
+IeVRifVKAVoKS7nj3q6u++fzlYOtcrao5gXoU8mq4LmynegkibYBklDKuB7EokMz
+sfO5UbuUhxV0fQDy++IwC9JZZNxdWXFeAthkZcmXsA==
+-----END CERTIFICATE-----
+</ca>
+<key>
+-----BEGIN PRIVATE KEY-----
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDDS2xE+sSZEFJf
+ubJHZid3U5ZjwtMICXh7bjkeLykRWDw4FQvTnk19e55BTTApe0vaPHSY5NhzVAMM
+Otu48z6UrIvX5itY7prisWgmrnOOSxv8rLHbNSnDupSuBLahYGCI4zkqWa6/KBMp
+50s5yvr3QIa8ozIH0M+nzCCMVaL9nzccIqe3sOPDj8veEYwM2cjzyLImkh7630g3
+U+p4vzuXTdw6Unmn4sWqXrNMLbtqIvOmwLTTV/UssIDHwId0UUvyl6L3YEkINMIU
+UL1YQwqZOtSJSbv5lLoELZN6Spj6pc/HUy3tRoTTh3OpJ725aztNEIumRr0TOsri
+fcRTQP1tAgMBAAECggEAEwGCFex5uZO3EI3X5c7xRFGkLy1EsGGLkieV83QPgRqf
+Ma4KqpubWvzu19gVOdQ/+4sqpb6PuhmQ+l24CHXTv1BTg71otozyEeHGCw2rPUvd
++2crH/Q6jkvYMF9RDr98ZZYHeDGmKgBSbR+PWJ6CchGbizwuoEgYDXJ2MHIdHKV4
+RZKa2Gad/YjVGpOwVkdIlKuy8eTM15lsrc56yf+APeYqqSiH8cvXKXjzh26bjOQ6
+7SwAw2+1TRRTJPULD9qv2aYCvs1Z7bPaT25ctVk933hBRNeg4zpcPp57gZPPlrbH
+OW1umZBxxrRJKD/60MGWl7vkD0KXccLhMxNPCJHimQKBgQD5aX7aIihdpt5tbhUw
+V6a3kaqrV92+sxo8H1AMaN7DeNrHceG2QBpJ5AUrCSYREMJKMvasMbDrvqxb+++Q
+hEYeIRZImueb72jXPrrG4LKCFSLHcdEddZgL28dKIKxlL8fT+E6AeOUtaemZuwps
+f7w6H12QexXL/djFn9mvIhgHwwKBgQDIc/1LQYGGL69qqcCtMHA0JQQc5lDieM6/
+3M4jj9M2zGQgnFI21D6ceYVnLDng9PYQEaeZEgUXNKJHQ2t+uoJ7HFP7M5toBGpN
+Hu5XSpyvqX9WLdUHFKyqlhuLai6m96V4ykFyAqrmlCkOKxQfgUYHoLcVX2y4Es0R
+8hqQ0mXDDwKBgQDiYFp+6tnwhvEEKhKZWjU8EL7z3kCqQi3hvBoP6W+nxB3vQPI5
+VV2HC6uVMCyY+LkgV7mE+WU31EzlAHqklSp/VlC/fboS0u45z/n/YRsk7sIufKPt
+NTrYKJduNNHE1eVuA8Zc3V5GJgedPSNs71OM/cMSzGUwTite1IPkbfGZuQKBgQCe
+f3hMxSMRYysk/8ymJKLT2GEEKOjT6gowkvs8C0FLFxok3vXy/Kf1OfFNvx6UzZyy
+4ALRefokey3Fg32/2uHJToDpI8lB2hvjlw2GYCy8iR1ymxLSYnqU99QXzIHO7Aof
+FG3jJFDVuVktJsrmjmU9KssZTza75cHY6sIuuO5V6QKBgQCnfg1A7kNAHz8hdINW
+hyN3ZRzbQiAKsRbyPdyNvZCqeFlka7AKQCJY2HhjqbK83TmsekqmhDkNUE7vo4Re
+m7ae0iaBbtkaACON61yuCfqWMFi1gMZ+Q0Dxn2ODRdJOyjqtaO9It1G6LXFC8WOF
+5vvVZUUw4eiKrVT+KqJjiuMXWA==
+-----END PRIVATE KEY-----
+</key>
+<cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            6b:a3:3a:15:07:47:18:d6:bf:56:70:a7:b3:74:47:42
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=Easy-RSA CA
+        Validity
+            Not Before: Jul 13 19:25:39 2020 GMT
+            Not After : Jul 11 19:25:39 2030 GMT
+        Subject: CN=client-aws-us
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:c3:4b:6c:44:fa:c4:99:10:52:5f:b9:b2:47:66:
+                    27:77:53:96:63:c2:d3:08:09:78:7b:6e:39:1e:2f:
+                    29:11:58:3c:38:15:0b:d3:9e:4d:7d:7b:9e:41:4d:
+                    30:29:7b:4b:da:3c:74:98:e4:d8:73:54:03:0c:3a:
+                    db:b8:f3:3e:94:ac:8b:d7:e6:2b:58:ee:9a:e2:b1:
+                    68:26:ae:73:8e:4b:1b:fc:ac:b1:db:35:29:c3:ba:
+                    94:ae:04:b6:a1:60:60:88:e3:39:2a:59:ae:bf:28:
+                    13:29:e7:4b:39:ca:fa:f7:40:86:bc:a3:32:07:d0:
+                    cf:a7:cc:20:8c:55:a2:fd:9f:37:1c:22:a7:b7:b0:
+                    e3:c3:8f:cb:de:11:8c:0c:d9:c8:f3:c8:b2:26:92:
+                    1e:fa:df:48:37:53:ea:78:bf:3b:97:4d:dc:3a:52:
+                    79:a7:e2:c5:aa:5e:b3:4c:2d:bb:6a:22:f3:a6:c0:
+                    b4:d3:57:f5:2c:b0:80:c7:c0:87:74:51:4b:f2:97:
+                    a2:f7:60:49:08:34:c2:14:50:bd:58:43:0a:99:3a:
+                    d4:89:49:bb:f9:94:ba:04:2d:93:7a:4a:98:fa:a5:
+                    cf:c7:53:2d:ed:46:84:d3:87:73:a9:27:bd:b9:6b:
+                    3b:4d:10:8b:a6:46:bd:13:3a:ca:e2:7d:c4:53:40:
+                    fd:6d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints:
+                CA:FALSE
+            X509v3 Subject Key Identifier:
+                ED:22:0A:59:DE:0E:C6:D5:DB:44:F8:83:CF:FE:AA:6A:81:12:F4:78
+            X509v3 Authority Key Identifier:
+                keyid:A4:5A:88:E4:C7:00:C1:A4:83:F0:C2:4C:3F:5B:BF:8D:13:B9:EC:B6
+                DirName:/CN=Easy-RSA CA
+                serial:01:0D:03:9A:9C:51:AC:C0:8F:0A:1F:B0:61:D6:94:DC:29:DB:4A:09
+
+            X509v3 Extended Key Usage:
+                TLS Web Client Authentication
+            X509v3 Key Usage:
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         82:84:55:2d:b4:80:83:d3:3f:9a:c6:60:8a:87:4c:61:e5:8c:
+         d5:be:30:ad:d9:14:1c:36:66:8a:7e:6c:b6:5a:6c:52:2c:7a:
+         43:33:f8:e2:15:c6:de:22:f0:00:e7:04:bf:12:75:cd:71:e3:
+         2d:46:95:17:cc:85:56:6f:ce:ef:88:62:fd:09:4f:c8:51:71:
+         1f:82:cb:31:a1:78:a8:d7:9b:2e:23:e1:68:ee:26:25:fa:4e:
+         a8:5d:b7:2c:34:69:32:e7:91:ac:4f:80:3d:75:6c:4d:bf:8e:
+         23:86:9c:cb:41:7f:01:fd:94:74:e5:19:6d:0c:3e:f7:57:32:
+         08:6e:1d:a8:e9:29:89:00:a4:bd:79:27:db:31:5a:a9:31:25:
+         2f:45:81:15:40:0b:ae:06:fc:c9:b9:e7:9a:31:e0:73:b0:28:
+         15:d4:a7:f0:70:d7:23:e1:f3:e5:33:89:ff:ea:17:59:2d:e7:
+         57:13:fe:8f:e9:8a:64:46:c0:1f:38:ab:8b:bc:30:41:2b:da:
+         82:aa:4e:05:aa:19:9c:91:cb:a7:ee:66:aa:1a:ca:3c:30:d5:
+         da:a1:e4:04:45:c5:63:e9:0e:f6:29:a8:87:6c:67:cd:fb:95:
+         ce:bf:b5:61:cb:fa:bd:5c:81:be:83:2c:36:80:fa:47:e1:9b:
+         9f:f3:7a:b5
+-----BEGIN CERTIFICATE-----
+MIIDWzCCAkOgAwIBAgIQa6M6FQdHGNa/VnCns3RHQjANBgkqhkiG9w0BAQsFADAW
+MRQwEgYDVQQDDAtFYXN5LVJTQSBDQTAeFw0yMDA3MTMxOTI1MzlaFw0zMDA3MTEx
+OTI1MzlaMBgxFjAUBgNVBAMMDWNsaWVudC1hd3MtdXMwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQDDS2xE+sSZEFJfubJHZid3U5ZjwtMICXh7bjkeLykR
+WDw4FQvTnk19e55BTTApe0vaPHSY5NhzVAMMOtu48z6UrIvX5itY7prisWgmrnOO
+Sxv8rLHbNSnDupSuBLahYGCI4zkqWa6/KBMp50s5yvr3QIa8ozIH0M+nzCCMVaL9
+nzccIqe3sOPDj8veEYwM2cjzyLImkh7630g3U+p4vzuXTdw6Unmn4sWqXrNMLbtq
+IvOmwLTTV/UssIDHwId0UUvyl6L3YEkINMIUUL1YQwqZOtSJSbv5lLoELZN6Spj6
+pc/HUy3tRoTTh3OpJ725aztNEIumRr0TOsrifcRTQP1tAgMBAAGjgaIwgZ8wCQYD
+VR0TBAIwADAdBgNVHQ4EFgQU7SIKWd4OxtXbRPiDz/6qaoES9HgwUQYDVR0jBEow
+SIAUpFqI5McAwaSD8MJMP1u/jRO57LahGqQYMBYxFDASBgNVBAMMC0Vhc3ktUlNB
+IENBghQBDQOanFGswI8KH7Bh1pTcKdtKCTATBgNVHSUEDDAKBggrBgEFBQcDAjAL
+BgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAIKEVS20gIPTP5rGYIqHTGHl
+jNW+MK3ZFBw2Zop+bLZabFIsekMz+OIVxt4i8ADnBL8Sdc1x4y1GlRfMhVZvzu+I
+Yv0JT8hRcR+CyzGheKjXmy4j4WjuJiX6Tqhdtyw0aTLnkaxPgD11bE2/jiOGnMtB
+fwH9lHTlGW0MPvdXMghuHajpKYkApL15J9sxWqkxJS9FgRVAC64G/Mm555ox4HOw
+KBXUp/Bw1yPh8+Uzif/qF1kt51cT/o/pimRGwB84q4u8MEEr2oKqTgWqGZyRy6fu
+Zqoayjww1dqh5ARFxWPpDvYpqIdsZ837lc6/tWHL+r1cgb6DLDaA+kfhm5/zerU=
+-----END CERTIFICATE-----
+</cert>
+<tls-auth>
+#
+# 2048 bit OpenVPN static key
+#
+-----BEGIN OpenVPN Static key V1-----
+1b7e445078f142760dc7b4613ed373b9
+7375c34b3ee9df4f907eec0eff9e3ecb
+7415bc2143eb146729d6e0e653f6afb6
+50376b3cbf0543dd27cc3f5c6b9fa2de
+c353d433b5011cd38b435b9fd71a0273
+ff5e413f42432f064d918b9270fbc64a
+7f063422ff437d83928ca18a38d3a68d
+fdc9a226b4b9c372b0b910fe03e22009
+77b824851825fa6b67e950de54f40fed
+cc83335a2906c68f9d33ce9e342ebe86
+b9f0f5677bd188f8b4f196a0605ab494
+8462560703ba259690b0a45f0d4db28d
+267c82df355f237ef457cb41cbb19b12
+7130e6fe57a0490a1c10c3cfa6553ecd
+513f9d3380f5f0210b0d122af88347c3
+783a7e8e2530d248c7f47d8dabe5a5cd
+-----END OpenVPN Static key V1-----
+</tls-auth>
+key-direction 1
+nobind
+remote-cert-tls server
+cipher AES-256-CBC
+auth SHA256
+persist-tun
+# persist-tun also enables pre resolving to avoid DNS resolve problem
+preresolve
+# Use system proxy setting
+management-query-proxy
+# Custom configuration options
+# You are on your on own here :)
+# These options found in the config file do not map to config settings:
+resolv-retry infinite 
+
