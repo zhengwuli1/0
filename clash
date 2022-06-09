@@ -1,8 +1,8 @@
 port: 7890
 socks-port: 7891
-# redir-port: 7892
-# tproxy-port: 7893
-# mixed-port: 7890
+redir-port: 7892
+tproxy-port: 7893
+mixed-port: 7890
 allow-lan: true
 bind-address: '*'
 mode: global
@@ -25,8 +25,8 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver:
-    - 114.114.114.114 # default value
-    - 8.8.8.8 # default value
+    - 114.114.114.114
+    - 8.8.8.8
     - tls://dns.rubyfish.cn:853
     - https://1.1.1.1/dns-query
     - dhcp://en0
