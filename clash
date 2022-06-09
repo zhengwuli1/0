@@ -1,1 +1,25 @@
-wjjw
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+secret: ""
+proxies:
+
+  - name: 新西伯利亚
+    type: vmess
+    server: 193.53.126.52
+    port: 666
+    uuid: 91408b79-e6e2-4f99-bee9-92e47ff83918
+    alterId: 10
+    cipher: auto
+    network: http
+    
+  - name: 韩国
+    type: vmess
+    server: 158.247.237.179
+    port: 666
+    uuid: 389f6fce-acca-41a1-9684-a4f8d007c9d5
+    alterId: 10
+    cipher: auto
+    
