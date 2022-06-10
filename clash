@@ -31,7 +31,6 @@ dns:
     - https://1.1.1.1/dns-query
     - dhcp://en0
 
-
 proxies:
   - {name: 香港, server: 103.233.251.211, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: 127ed1400716, plugin: v2ray-plugin, plugin-opts: {mode: websocket, host: hk20jc001.fengchiline.xyz, path: "", tls: true, mux: true, skip-cert-verify: false}}
   - {name: 香港1, server: 154.221.22.201, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: a11a783e60ec, plugin: v2ray-plugin, plugin-opts: {mode: websocket, host: hk5Mysy001.fengchiline.xyz, path: "", tls: true, mux: true, skip-cert-verify: false}}
@@ -57,6 +56,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
+    tolerance: 150
+    lazy: true
     proxies:
       - 香港
       - 香港1
