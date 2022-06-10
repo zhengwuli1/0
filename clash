@@ -45,8 +45,8 @@ proxies:
   - name: 新西伯利亚
     type: vmess
     server: 193.53.126.52
-    port: 666
-    uuid: 91408b79-e6e2-4f99-bee9-92e47ff83918
+    port: 10086
+    uuid: a602fe8d-4626-49fc-85b9-7ea6138789e2
     alterId: 10
     cipher: auto
     network: http
