@@ -69,5 +69,7 @@ proxy-groups:
       - 美国
       - 新加坡
       - 泰国
+
+proxy-providers:
       
 rules:
