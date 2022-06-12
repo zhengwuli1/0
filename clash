@@ -24,7 +24,7 @@ proxies:
     uuid: a602fe8d-4626-49fc-85b9-7ea6138789e2
     alterId: 10
     cipher: auto
-    network: utp
+    network: http
    
 proxy-groups:
   - name: auto
