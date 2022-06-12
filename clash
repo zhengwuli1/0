@@ -1,8 +1,9 @@
 port: 7890
 socks-port: 7891
 allow-lan: false
+bind-address: '*'
 mode: global
-log-level: info
+log-level: silent
 external-controller: 127.0.0.1:9090
 
 proxies:
@@ -23,7 +24,7 @@ proxies:
     uuid: a602fe8d-4626-49fc-85b9-7ea6138789e2
     alterId: 10
     cipher: auto
-    network: http
+    network: utp
    
 proxy-groups:
   - name: auto
